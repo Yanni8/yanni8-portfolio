@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-
-</script>
-
 <template>
   <v-app>
     <v-app-bar class="w-full" elevation="5">
@@ -10,13 +5,14 @@ import { RouterLink, RouterView } from 'vue-router'
 
       <v-spacer></v-spacer>
 
-      <v-btn variant="text" to="frameworks">
+      <v-btn variant="text" @click="updateUrl('technologies')">
         Technologies
       </v-btn>
 
     </v-app-bar>
     <v-main>
-      <router-view></router-view>
+      <div id="technologies" class="pt-10 w-full h-1"></div>
+      <framework-overivew></framework-overivew>
     </v-main>
     <v-footer class="flex justify-between w-full">
       <div>
@@ -29,5 +25,34 @@ import { RouterLink, RouterView } from 'vue-router'
     </v-footer>
   </v-app>
 </template>
+<script lang="ts">
+import { setgroups } from 'process';
+import FrameworkOverivew from './views/FrameworkOverview.vue'
 
+export default {
+  name: "App",
+  components: {
+    FrameworkOverivew
+  },
+  methods: {
+    updateView(elementId: string) {
+      if(!elementId){
+        return;
+      }
+      const domElement = document.getElementById(elementId);
+      if (domElement) {
+        domElement.scrollIntoView({ behavior: 'smooth'});
+      }
+    },
+    updateUrl(id: string) {
+      this.updateView(id);
+      this.$router.push({ path: '/', hash: '#' + id })
+    }
+  },
+  mounted() {
+    this.updateView(window.location.hash.replace('#', ''));
+  }
+}
+
+</script>
 <style scoped></style>

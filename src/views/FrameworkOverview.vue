@@ -5,7 +5,7 @@
             <div v-for="framework in frameworks" class="ma-4 h-fit">
                 <h2 class="mb-2 text-xl max-sm:text-center">{{ framework.groupName }}</h2>
                 <v-divider thickness="2" class="mb-8 w-full h-fit"></v-divider>
-                <div class="flex flex-wrap max-md:justify-center">
+                <div class="flex flex-wrap max-md:justify-center min-h-40">
                     <framework-card v-for="library in framework['frameworks']" :logo="library.logo"
                         :title="library.title" :project-url="library.projectUrl"></framework-card>
                 </div>

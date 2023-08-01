@@ -1,5 +1,5 @@
 <template>
-    <div @click="$emit('openProject')"
+    <div
         class="library-card relative border w-40 min-w-[10rem] rounded-lg ma-6 pa-4 cursor-pointer md:hover:scale-125">
         <img :src="logo" class="h-24 mx-auto rounded-lg">
         <h1 class="text-center mt-2">{{ title }}</h1>
@@ -14,7 +14,6 @@
 <script lang="ts">
 export default {
     name: "FrameworkCard",
-    emits: ['openProject'],
     props: {
         title: {
             required: true,
