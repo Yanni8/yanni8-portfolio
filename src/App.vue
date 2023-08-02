@@ -8,11 +8,17 @@
       <v-btn variant="text" @click="updateUrl('technologies')">
         Technologies
       </v-btn>
+      <v-btn variant="text" @click="updateUrl('contact')">
+        Contact Details
+      </v-btn>
 
     </v-app-bar>
     <v-main>
       <div id="technologies" class="pt-10 w-full h-1"></div>
       <framework-overivew></framework-overivew>
+      <div id="contact" class="pt-10 w-full h-1"></div>
+      <contact></contact>
+
     </v-main>
     <v-footer class="flex justify-between w-full">
       <div>
@@ -20,6 +26,7 @@
       </div>
       <div>
         <v-btn class="mx-4" icon="far fa-envelope" variant="plain" href="mailto:mail@ynnk.dev" size="small"></v-btn>
+        <v-btn class="mx-4" icon="fab fa-linkedin" variant="plain" href="mailto:mail@ynnk.dev" size="small"></v-btn>
         <v-btn class="mx-4" icon="fab fa-github" variant="plain" href="https://github.com/yanni8" size="small"></v-btn>
       </div>
     </v-footer>
@@ -27,12 +34,14 @@
 </template>
 <script lang="ts">
 import { setgroups } from 'process';
-import FrameworkOverivew from './views/FrameworkOverview.vue'
+import FrameworkOverivew from './views/FrameworkOverview.vue';
+import Contact from './views/Contact.vue';
 
 export default {
   name: "App",
   components: {
-    FrameworkOverivew
+    FrameworkOverivew,
+    Contact
   },
   methods: {
     updateView(elementId: string) {
