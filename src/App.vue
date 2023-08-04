@@ -69,4 +69,73 @@ export default {
 }
 
 </script>
-<style scoped></style>
+<style  lang="scss">
+#app{
+  font-size: medium;
+}
+main{
+  z-index: 1000;
+}
+header{
+  z-index: 1001;
+}
+
+html {
+  background: #0f172a;
+}
+
+@mixin bgelements($count) {
+  
+
+  $colors: #18395e, #102f8a ;
+  $shadow: ();
+
+  @for $i from 0 through $count {
+    $shadow: $shadow,
+                 (-.5+(random()) * 3) + em
+                 (-.5+(random()) * 3) + em
+                 3rem
+                 lighten(nth($colors, random(length($colors))), 20%);;
+  }
+  text-shadow: $shadow;
+}
+
+html {
+  font: 5vmin/1.3 Serif;
+  overflow: hidden;
+  background: #10192f;
+}
+
+head {
+  display: block;
+  font-size: 52px;
+  color: transparent;
+}
+
+head::after {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 3em;
+  height: 3em;
+  content: '.';
+  mix-blend-mode: screen;
+  animation: 100s  animate-bg infinite ease-in-out alternate;
+}
+
+head::after {
+  @include bgelements(30);
+}
+
+
+@keyframes animate-bg {
+  from {
+    transform: rotate(0deg) scale(12) translateX(-20px);
+  }
+  to {
+    transform: rotate(360deg) scale(18) translateX(20px);
+  }
+}
+
+
+</style>

@@ -2,7 +2,7 @@
     <div class="flex aling-center justify left">
         <div class="w-full h-2 rounded-lg bg-gray-200 my-5 max-w-[60%]">
             <div :style="{ 'width': experienceWidth }">
-                <div :style="{ 'background-color': backgroundColor }" class="h-2 rounded-lg w-full slider"></div>
+                <div class="h-2 rounded-lg w-full slider bg-gradient-to-r from-purple-500 to-pink-500"></div>
             </div>
         </div>
         <span class="h-min my-auto ml-5 relative w-[40%]"> <div class="inline">{{ title }}</div> <div class="inline absolute right-0">{{ experienceInYear }} of experience</div></span>
@@ -32,16 +32,6 @@ export default {
     computed: {
         experienceWidth() {
             return (this.now - this.experience) / (this.now - this.startDate) * 100 + "%";
-        },
-        backgroundColor() {
-            const percent = (this.now - this.experience) / (this.now - this.startDate);
-
-            if (percent > 0.75) {
-                return "green"
-            } else if (percent > 0.3) {
-                return "orange"
-            }
-            return "red";
         },
 
         experienceInYear() {
