@@ -14,11 +14,14 @@
 
     </v-app-bar>
     <v-main>
-      <div id="technologies" class="pt-10 w-full h-1"></div>
-      <framework-overivew></framework-overivew>
-      <div id="contact" class="pt-10 w-full h-1"></div>
-      <contact></contact>
-
+      <div>
+        <div id="technologies" class="pt-10 w-full h-1"></div>
+        <framework-overivew></framework-overivew>
+        <div id="experience" class="pt-10 w-full h-1"></div>
+        <experience></experience>
+        <div id="contact" class="pt-10 w-full h-1"></div>
+        <contact></contact>
+      </div>
     </v-main>
     <v-footer class="flex justify-between w-full">
       <div>
@@ -36,21 +39,23 @@
 import { setgroups } from 'process';
 import FrameworkOverivew from './views/FrameworkOverview.vue';
 import Contact from './views/Contact.vue';
+import Experience from './views/Experience.vue';
 
 export default {
   name: "App",
   components: {
     FrameworkOverivew,
-    Contact
+    Contact,
+    Experience
   },
   methods: {
     updateView(elementId: string) {
-      if(!elementId){
+      if (!elementId) {
         return;
       }
       const domElement = document.getElementById(elementId);
       if (domElement) {
-        domElement.scrollIntoView({ behavior: 'smooth'});
+        domElement.scrollIntoView({ behavior: 'smooth' });
       }
     },
     updateUrl(id: string) {
