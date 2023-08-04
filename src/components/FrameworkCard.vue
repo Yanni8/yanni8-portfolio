@@ -44,7 +44,6 @@ export default {
     }
 
     .library-card:hover .hover-overlay {
-        background-color: rgba(211, 211, 211, 0.452);
         position: absolute;
         height: 100%;
         width: 100%;
