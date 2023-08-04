@@ -23,7 +23,7 @@
         <contact></contact>
       </div>
     </v-main>
-    <v-footer class="flex justify-between w-full">
+    <v-footer class="flex justify-between w-full opacity-75">
       <div>
         &copy; {{ new Date().getFullYear() }} - Yannick Müller
       </div>
@@ -94,7 +94,7 @@ html {
     $shadow: $shadow,
                  (-.5+(random()) * 3) + em
                  (-.5+(random()) * 3) + em
-                 3rem
+                 10px
                  lighten(nth($colors, random(length($colors))), 20%);;
   }
   text-shadow: $shadow;
