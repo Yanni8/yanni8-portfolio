@@ -2,7 +2,7 @@
     <div class="flex aling-center justify left">
         <div class="w-full h-2 rounded-lg bg-gray-200 my-5 max-w-[60%]">
             <div :style="{ 'width': experienceWidth }">
-                <div class="h-2 rounded-lg w-full slider bg-gradient-to-r from-purple-500 to-pink-500"></div>
+                <div class="h-2 rounded-lg w-full slider max-md:duration-1000 bg-gradient-to-r from-purple-500 to-pink-500"></div>
             </div>
         </div>
         <span class="h-min my-auto ml-5 relative w-[40%]"> <div class="inline">{{ title }}</div> <div class="inline absolute right-0 max-md:hidden">{{ experienceInYear }} of experience</div></span>
