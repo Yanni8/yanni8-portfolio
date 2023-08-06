@@ -188,12 +188,15 @@ head::after {
 @media screen and (max-width: 768px) {
   head::after {
     @include bgelements-md(30);
+    animation: none;
   }
 }
 
 @media screen and (max-width: 640px) {
   head::after {
     @include bgelements-sm(30);
+    animation: none;
+
   }
 }
 
