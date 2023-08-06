@@ -5,7 +5,7 @@
                 <div class="h-2 rounded-lg w-full slider bg-gradient-to-r from-purple-500 to-pink-500"></div>
             </div>
         </div>
-        <span class="h-min my-auto ml-5 relative w-[40%]"> <div class="inline">{{ title }}</div> <div class="inline absolute right-0">{{ experienceInYear }} of experience</div></span>
+        <span class="h-min my-auto ml-5 relative w-[40%]"> <div class="inline">{{ title }}</div> <div class="inline absolute right-0 max-md:hidden">{{ experienceInYear }} of experience</div></span>
     </div>
 </template>
 <script lang="ts">

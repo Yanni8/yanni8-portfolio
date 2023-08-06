@@ -14,7 +14,7 @@
                 <v-icon icon="far fa-envelope" size="5rem"></v-icon>
                 <h2 class="text-2xl text-center mx-5">Send me a Email</h2>
             </a>
-            <a href="https://www.codewars.com/users/Yanni2" class="flex w-96 justify-start align-center rounded-lg hover:bg-stone-950/[.4] w-fit pa-4 cursor-pointer">
+            <a href="https://www.codewars.com/users/Yanni2" class="flex justify-start align-center rounded-lg hover:bg-stone-950/[.4] w-fit pa-4 cursor-pointer">
                 <v-icon icon="fas fa-code" size="5rem"></v-icon>
                 <h2 class="text-2xl text-center mx-5">Follow me on CodeWars</h2>
             </a>
