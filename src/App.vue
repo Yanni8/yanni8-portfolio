@@ -189,6 +189,8 @@ head::after {
   head::after {
     @include bgelements-md(30);
     animation: none;
+    transform: rotate(0deg) scale(12) translateX(-20px);
+
   }
 }
 
@@ -196,7 +198,7 @@ head::after {
   head::after {
     @include bgelements-sm(30);
     animation: none;
-
+    transform: rotate(0deg) scale(12) translateX(-20px);
   }
 }
 
