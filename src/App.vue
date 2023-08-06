@@ -116,7 +116,7 @@ html {
 
   @for $i from 0 through $count {
     $shadow: $shadow,
-    (-.5+(random()) * 3)+em (-.5+(random()) * 3)+em 60px lighten(nth($colors, random(length($colors))), 20%);
+    (-.5+(random()) * 3)+em (-.5+(random()) * 3)+em 10px lighten(nth($colors, random(length($colors))), 20%);
     ;
   }
 
@@ -134,7 +134,7 @@ html {
 
   @for $i from 0 through $count {
     $shadow: $shadow,
-    (-.3+(random()) * 2)+em (-.5+(random()) * 2)+em 30px lighten(nth($colors, random(length($colors))), 20%);
+    (-.3+(random()) * 2)+em (-.5+(random()) * 2)+em 10px lighten(nth($colors, random(length($colors))), 20%);
     ;
   }
 
@@ -178,7 +178,7 @@ head::after {
   height: 3em;
   content: '.';
   mix-blend-mode: screen;
-  animation: 100s -1s animate-bg infinite ease-in-out alternate;
+  animation: 100s -50s animate-bg infinite ease-in-out alternate;
 }
 
 head::after {
@@ -188,8 +188,6 @@ head::after {
 @media screen and (max-width: 768px) {
   head::after {
     @include bgelements-md(30);
-    animation: none;
-    transform: rotate(0deg) scale(12) translateX(-20px);
 
   }
 }
@@ -197,18 +195,16 @@ head::after {
 @media screen and (max-width: 640px) {
   head::after {
     @include bgelements-sm(30);
-    animation: none;
-    transform: rotate(0deg) scale(12) translateX(-20px);
   }
 }
 
 @keyframes animate-bg {
   from {
-    transform: rotate(0deg) scale(12) translateX(-20px);
+    transform: rotate(0deg) scale(15) translateX(-20px);
   }
 
   to {
-    transform: rotate(360deg) scale(18) translateX(20px);
+    transform: rotate(360deg) scale(15) translateX(20px);
   }
 }
 </style>
