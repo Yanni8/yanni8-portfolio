@@ -1,9 +1,9 @@
 <template>
     <div
-        class="library-card relative border w-40 min-w-[10rem] rounded-lg ma-6 pa-4 cursor-pointer md:hover:scale-125">
+        class="library-card relative border w-40 min-w-[10rem] md:hover:!border-0 rounded-lg ma-6 pa-4 cursor-pointer md:hover:scale-125">
         <img :src="logo" class="h-24 mx-auto rounded-lg">
         <h1 class="text-center mt-2">{{ title }}</h1>
-        <div class="hover-overlay  rounded-lg flex justify-center align-end max-md:-mx-7">
+        <div class="hover-overlay  rounded-lg flex justify-center align-end max-md:-mx-7  animate-border">
             <v-btn :href="projectUrl" :disabled="!projectUrl" color="white" class="learn-more w-min mb-1 scale-75"
                 variant="outlined">
                 {{ projectUrl ? 'View in Repo' : 'No Public Repo :(' }}
@@ -49,6 +49,39 @@ export default {
         width: 100%;
         top: 0;
         left: 0;
+    }
+
+    .animate-border:hover{
+        border: 2px solid transparent;
+        animation: border-animation 300ms forwards linear;
+
+    }
+
+    @keyframes border-animation {
+        0%{
+            border-image: conic-gradient(#0f172a 0deg, #0f172a 72deg, #0f172a 144deg, #0f172a 216deg, #0f172a 288deg);
+            border-image-slice: 1;
+        }
+        20%{
+            border-image: conic-gradient(#b827fc 0deg, #0f172a 72deg, #0f172a 144deg, #0f172a 216deg, #0f172a 288deg);
+            border-image-slice: 1;
+        }
+        40%{
+            border-image: conic-gradient(#b827fc 0deg, #2c90fc 72deg, #0f172a 144deg, #0f172a 216deg, #0f172a 288deg);
+            border-image-slice: 1;
+        }
+        60%{
+            border-image: conic-gradient(#b827fc 0deg, #2c90fc 72deg, #b8fd33 144deg, #0f172a 216deg, #0f172a 288deg);
+            border-image-slice: 1;
+        }
+        80%{
+            border-image: conic-gradient(#b827fc 0deg, #2c90fc 72deg, #b8fd33 144deg, #fec837 216deg, #0f172a 288deg);
+            border-image-slice: 1;
+        }
+        100%{
+            border-image: conic-gradient(#b827fc 0deg, #2c90fc 72deg, #b8fd33 144deg, #fec837 216deg, #fd1892 288deg);
+            border-image-slice: 1;
+        }
     }
 }
 </style>
