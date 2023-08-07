@@ -6,6 +6,10 @@
 
       <div class="max-lg:hidden">
         <v-spacer></v-spacer>
+        <v-btn variant="text" @click="updateUrl('about-me')">
+          About Me
+        </v-btn>
+
         <v-btn variant="text" @click="updateUrl('technologies')">
           Technologies
         </v-btn>
@@ -17,19 +21,23 @@
         </v-btn>
       </div>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" location="top" :width="'100%'">
+    <v-navigation-drawer v-model="drawer" location="top" width="100%">
       <v-list lines="one">
-        <v-list-item  @click="updateUrl('technologies')" title="Technologies"></v-list-item>
+        <v-list-item @click="updateUrl('about-me')" title="About Me"></v-list-item>
         <v-divider></v-divider>
-        <v-list-item  @click="updateUrl('experience')" title="Experience"></v-list-item>
+        <v-list-item @click="updateUrl('technologies')" title="Technologies"></v-list-item>
         <v-divider></v-divider>
-        <v-list-item  @click="updateUrl('contact')" title="Contact"></v-list-item>
+        <v-list-item @click="updateUrl('experience')" title="Experience"></v-list-item>
+        <v-divider></v-divider>
+        <v-list-item @click="updateUrl('contact')" title="Contact"></v-list-item>
         <v-divider></v-divider>
       </v-list>
     </v-navigation-drawer>
 
     <v-main>
       <div>
+        <div id="about-me" class="pt-10 w-full h-1"></div>
+        <about-me></about-me>
         <div id="technologies" class="pt-10 w-full h-1"></div>
         <framework-overivew></framework-overivew>
         <div id="experience" class="pt-10 w-full h-1"></div>
@@ -54,6 +62,7 @@
 import FrameworkOverivew from './views/FrameworkOverview.vue';
 import Contact from './views/Contact.vue';
 import Experience from './views/Experience.vue';
+import AboutMe from './views/AboutMe.vue';
 
 export default {
   name: "App",
@@ -65,7 +74,8 @@ export default {
   components: {
     FrameworkOverivew,
     Contact,
-    Experience
+    Experience,
+    AboutMe
   },
   methods: {
     updateView(elementId: string) {

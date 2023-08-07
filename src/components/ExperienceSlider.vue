@@ -5,7 +5,7 @@
                 <div class="h-2 rounded-lg w-full slider max-md:duration-1000 bg-gradient-to-r from-purple-500 to-pink-500"></div>
             </div>
         </div>
-        <span class="h-min my-auto ml-5 relative w-[40%]"> <div class="inline">{{ title }}</div> <div class="inline absolute right-0 max-md:hidden">{{ experienceInYear }} of experience</div></span>
+        <span class="h-min my-auto ml-5 relative w-[40%]"> <div class="inline">{{ title }}</div></span>
     </div>
 </template>
 <script lang="ts">
@@ -33,26 +33,6 @@ export default {
         experienceWidth() {
             return (this.now - this.experience) / (this.now - this.startDate) * 100 + "%";
         },
-
-        experienceInYear() {
-            let months = Math.ceil((this.now - this.experience) / 2629800000);
-            const years = Math.floor(months / 12);
-            months = months % 12;
-            let yearsInText = ""
-            if (years) {
-                yearsInText = years + " year" + (years > 1 ? "s " : " ");
-            }
-
-            if (months) {
-
-                if (yearsInText) {
-                    yearsInText += " and ";
-                }
-
-                return yearsInText + months + " month" + (months > 1 ? "s" : "");
-            }
-            return yearsInText;
-        }
     },
 }
 </script>
