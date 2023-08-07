@@ -21,6 +21,9 @@
         </v-btn>
       </div>
     </v-app-bar>
+    <v-system-bar class="flex justify-center">
+      <p class="mr-2 uppercase text-red-600 font-bold">important</p> <p>This website is still under development</p>
+    </v-system-bar>
     <v-navigation-drawer v-model="drawer" location="top" width="100%">
       <v-list lines="one">
         <v-list-item @click="updateUrl('about-me')" title="About Me"></v-list-item>
