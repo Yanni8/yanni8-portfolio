@@ -24,7 +24,7 @@
                     Currently, I am trying to gain some experience in the field of data analysis.
                 </p>
                 <br />
-                <p>md
+                <p>
                     On my private laptop, I use Debian as operating system. <br />
                     However, I also have no problems working with Windows or MacOS. <br />
                     By using Linux on my personal device and by maintaining some private servers, <br />
