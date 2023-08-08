@@ -106,7 +106,7 @@ export default {
       this.$router.push({ path: '/', hash: '#' + id })
     }
   },
-  mounted(Procreate) {
+  mounted() {
     this.updateView(window.location.hash.replace('#', ''));
   }
 }
