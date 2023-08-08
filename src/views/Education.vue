@@ -4,7 +4,6 @@
         <v-divider thickness="2" class="mb-8 w-full h-fit"></v-divider>
         <div class="mt-12">
             <h2 class="text-4xl">School Timeline</h2>
-            <v-divider class="my-4"></v-divider>
             <v-timeline :direction="isMobile ? 'vertical' : 'horizontal'" truncate-line="end"
                 :class="{ 'min-h-[30rem]': isMobile }">
                 <v-timeline-item>
@@ -37,7 +36,6 @@
         </div>
         <div class="-mb-8">
             <h2 class="text-4xl mt-8">Natural Languages</h2>
-            <v-divider class="my-4"></v-divider>
             <ul id="list-none mt-8">
                 <li
                     class="p-4 w-[8rem] max-md:mx-auto text-center md:inline-block bg-gray-800/[.7] cursor-pointer m-4 hover:bg-gray-900/[.7]">
