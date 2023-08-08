@@ -9,7 +9,9 @@
         <v-btn variant="text" @click="updateUrl('about-me')">
           About Me
         </v-btn>
-
+        <v-btn variant="text" @click="updateUrl('education')">
+          Education
+        </v-btn>
         <v-btn variant="text" @click="updateUrl('technologies')">
           Technologies
         </v-btn>
@@ -22,11 +24,14 @@
       </div>
     </v-app-bar>
     <v-system-bar class="flex justify-center">
-      <p class="mr-2 uppercase text-red-600 font-bold">important</p> <p>This website is still under development</p>
+      <p class="mr-2 uppercase text-red-600 font-bold">important</p>
+      <p>This website is still under development</p>
     </v-system-bar>
     <v-navigation-drawer v-model="drawer" location="top" width="100%">
       <v-list lines="one">
         <v-list-item @click="updateUrl('about-me')" title="About Me"></v-list-item>
+        <v-divider></v-divider>
+        <v-list-item @click="updateUrl('education')" title="Education"></v-list-item>
         <v-divider></v-divider>
         <v-list-item @click="updateUrl('technologies')" title="Technologies"></v-list-item>
         <v-divider></v-divider>
@@ -41,6 +46,8 @@
       <div>
         <div id="about-me" class="pt-10 w-full h-1"></div>
         <about-me></about-me>
+        <div id="education" class="pt-10 w-full h-1"></div>
+        <education></education>
         <div id="technologies" class="pt-10 w-full h-1"></div>
         <framework-overivew></framework-overivew>
         <div id="experience" class="pt-10 w-full h-1"></div>
@@ -66,6 +73,7 @@ import FrameworkOverivew from './views/FrameworkOverview.vue';
 import Contact from './views/Contact.vue';
 import Experience from './views/Experience.vue';
 import AboutMe from './views/AboutMe.vue';
+import Education from './views/Education.vue';
 
 export default {
   name: "App",
@@ -78,7 +86,8 @@ export default {
     FrameworkOverivew,
     Contact,
     Experience,
-    AboutMe
+    AboutMe,
+    Education
   },
   methods: {
     updateView(elementId: string) {
@@ -97,7 +106,7 @@ export default {
       this.$router.push({ path: '/', hash: '#' + id })
     }
   },
-  mounted() {
+  mounted(Procreate) {
     this.updateView(window.location.hash.replace('#', ''));
   }
 }
