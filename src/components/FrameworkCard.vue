@@ -51,34 +51,77 @@ export default {
         left: 0;
     }
 
-    .animate-border:hover{
+    .animate-border:hover {
         border: 2px solid transparent;
         animation: border-animation 300ms forwards linear;
 
     }
 
+    .animate-border:hover::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        transform: translate3d(0, 0, -1px);
+        background: conic-gradient(#0f172a 0deg, #0f172a 72deg, #0f172a 144deg, #0f172a 216deg, #0f172a 288deg);
+        animation: border-animation-bg 300ms forwards linear;
+
+        filter: blur(10px);
+        clip-path: polygon(-100vmax -100vmax, 100vmax -100vmax, 100vmax 100vmax, -100vmax 100vmax, -100vmax -100vmax, 0 0, 0 100%, 100% 100%, 100% 0, 0 0);
+    }
+
+    @keyframes border-animation-bg {
+        0% {
+            background: conic-gradient(#0f172a 0deg, #0f172a 72deg, #0f172a 144deg, #0f172a 216deg, #0f172a 288deg);
+        }
+
+        20% {
+            background: conic-gradient(#b827fc 0deg, #0f172a 72deg, #0f172a 144deg, #0f172a 216deg, #0f172a 288deg);
+        }
+
+        40% {
+            background: conic-gradient(#b827fc 0deg, #2c90fc 72deg, #0f172a 144deg, #0f172a 216deg, #0f172a 288deg);
+        }
+
+        60% {
+            background: conic-gradient(#b827fc 0deg, #2c90fc 72deg, #b8fd33 144deg, #0f172a 216deg, #0f172a 288deg);
+        }
+
+        80% {
+            background: conic-gradient(#b827fc 0deg, #2c90fc 72deg, #b8fd33 144deg, #fec837 216deg, #0f172a 288deg);
+        }
+
+        100% {
+            background: conic-gradient(#b827fc 0deg, #2c90fc 72deg, #b8fd33 144deg, #fec837 216deg, #fd1892 288deg);
+        }
+    }
+
     @keyframes border-animation {
-        0%{
+        0% {
             border-image: conic-gradient(#0f172a 0deg, #0f172a 72deg, #0f172a 144deg, #0f172a 216deg, #0f172a 288deg);
             border-image-slice: 1;
         }
-        20%{
+
+        20% {
             border-image: conic-gradient(#b827fc 0deg, #0f172a 72deg, #0f172a 144deg, #0f172a 216deg, #0f172a 288deg);
             border-image-slice: 1;
         }
-        40%{
+
+        40% {
             border-image: conic-gradient(#b827fc 0deg, #2c90fc 72deg, #0f172a 144deg, #0f172a 216deg, #0f172a 288deg);
             border-image-slice: 1;
         }
-        60%{
+
+        60% {
             border-image: conic-gradient(#b827fc 0deg, #2c90fc 72deg, #b8fd33 144deg, #0f172a 216deg, #0f172a 288deg);
             border-image-slice: 1;
         }
-        80%{
+
+        80% {
             border-image: conic-gradient(#b827fc 0deg, #2c90fc 72deg, #b8fd33 144deg, #fec837 216deg, #0f172a 288deg);
             border-image-slice: 1;
         }
-        100%{
+
+        100% {
             border-image: conic-gradient(#b827fc 0deg, #2c90fc 72deg, #b8fd33 144deg, #fec837 216deg, #fd1892 288deg);
             border-image-slice: 1;
         }
