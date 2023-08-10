@@ -1,9 +1,8 @@
 <template>
   <v-app>
     <v-app-bar class="w-full" elevation="5">
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="lg:!hidden"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click.native="drawer = !drawer" class="lg:!hidden"></v-app-bar-nav-icon>
       <v-app-bar-title><span class="max-lg:hidden">Portfolio </span>Yannick Müller</v-app-bar-title>
-
       <div class="max-lg:hidden">
         <v-spacer></v-spacer>
         <v-btn variant="text" @click="updateUrl('about-me')">
@@ -27,7 +26,7 @@
       <p class="mr-2 uppercase text-red-600 font-bold">important</p>
       <p>This website is still under development</p>
     </v-system-bar>
-    <v-navigation-drawer v-model="drawer" location="top" width="100%">
+    <v-navigation-drawer disable-resize-watcher v-model="drawer" location="top" width="100%">
       <v-list lines="one">
         <v-list-item @click="updateUrl('about-me')" title="About Me"></v-list-item>
         <v-divider></v-divider>
