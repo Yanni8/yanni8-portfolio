@@ -35,7 +35,6 @@ export default {
     mounted() {
         const element = document.getElementById("experience-wrapper");
         const observer = new IntersectionObserver(entries => {
-            console.log(entries[0].isIntersecting)
             this.isVisible = entries[0].isIntersecting;
         });
 
