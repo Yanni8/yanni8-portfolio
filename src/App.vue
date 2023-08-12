@@ -51,10 +51,6 @@
         <framework-overivew></framework-overivew>
         <div id="experience" class="pt-10 w-full h-1"></div>
         <experience></experience>
-
-        <github-stats></github-stats>
-
-
         <div id="contact" class="pt-10 w-full h-1"></div>
         <contact></contact>
       </div>
@@ -77,7 +73,6 @@ import Contact from './views/Contact.vue';
 import Experience from './views/Experience.vue';
 import AboutMe from './views/AboutMe.vue';
 import Education from './views/Education.vue';
-import GithubStats from './views/GithubStats.vue';
 
 export default {
   name: "App",
@@ -92,7 +87,6 @@ export default {
     Experience,
     AboutMe,
     Education,
-    GithubStats
   },
   methods: {
     updateView(elementId: string) {
