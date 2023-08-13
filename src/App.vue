@@ -11,9 +11,6 @@
         <v-btn variant="text" @click="updateUrl('education')">
           Education
         </v-btn>
-        <v-btn variant="text" @click="updateUrl('technologies')">
-          Technologies
-        </v-btn>
         <v-btn variant="text" @click="updateUrl('experience')">
           Experience
         </v-btn>
@@ -32,8 +29,6 @@
         <v-divider></v-divider>
         <v-list-item @click="updateUrl('education')" title="Education"></v-list-item>
         <v-divider></v-divider>
-        <v-list-item @click="updateUrl('technologies')" title="Technologies"></v-list-item>
-        <v-divider></v-divider>
         <v-list-item @click="updateUrl('experience')" title="Experience"></v-list-item>
         <v-divider></v-divider>
         <v-list-item @click="updateUrl('contact')" title="Contact"></v-list-item>
@@ -49,10 +44,9 @@
         <about-me></about-me>
         <div id="education" class="pt-10 w-full h-1"></div>
         <education></education>
-        <div id="technologies" class="pt-10 w-full h-1"></div>
-        <framework-overivew></framework-overivew>
         <div id="experience" class="pt-10 w-full h-1"></div>
         <experience></experience>
+        <framework-overivew></framework-overivew>
         <div id="contact" class="pt-10 w-full h-1"></div>
         <contact></contact>
       </div>
