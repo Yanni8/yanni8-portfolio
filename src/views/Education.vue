@@ -34,20 +34,6 @@
                 </v-timeline-item>
             </v-timeline>
         </div>
-        <div class="-mb-8">
-            <h2 class="text-4xl mt-8">Natural Languages</h2>
-            <ul id="list-none mt-8">
-                <li
-                    class="p-4 w-[8rem] max-md:mx-auto text-center md:inline-block bg-gray-800/[.7] cursor-pointer m-4 hover:bg-gray-900/[.7]">
-                    French</li>
-                <li
-                    class="p-4 w-[8rem] max-md:mx-auto text-center md:inline-block bg-gray-800/[.7] cursor-pointer m-4 hover:bg-gray-900/[.7]">
-                    Englisch</li>
-                <li
-                    class="p-4 w-[8rem] max-md:mx-auto text-center md:inline-block bg-gray-800/[.7] cursor-pointer m-4 hover:bg-gray-900/[.7]">
-                    German</li>
-            </ul>
-        </div>
 
     </div>
 </template>

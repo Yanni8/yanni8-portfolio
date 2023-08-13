@@ -1,13 +1,15 @@
 <template>
-    <div
-        class="library-card relative border w-40 min-w-[10rem] md:hover:!border-0 rounded-lg ma-6 pa-4 cursor-pointer md:hover:scale-125">
-        <img :src="logo" class="h-24 mx-auto rounded-lg">
-        <h1 class="text-center mt-2">{{ title }}</h1>
-        <div class="hover-overlay  rounded-lg flex justify-center align-end max-md:-mx-7  animate-border">
-            <v-btn :href="projectUrl" :disabled="!projectUrl" color="white" class="learn-more w-min mb-1 scale-75"
-                variant="outlined">
-                {{ projectUrl ? 'View in Repo' : 'No Public Repo :(' }}
-            </v-btn>
+    <div class="min-w-[12rem] max-w-[12rem]">
+        <div
+            class="library-card relative border w-40 h-40 max-md:h-48 md:hover:!border-0 rounded-lg px-auto pa-4  cursor-pointer md:hover:scale-125">
+            <img :src="logo" class="h-24 mx-auto rounded-lg">
+            <h1 class="text-center mt-2">{{ title }}</h1>
+            <div class="hover-overlay  rounded-lg flex justify-center align-end max-md:-mx-7  animate-border">
+                <v-btn :href="projectUrl" :disabled="!projectUrl" color="white" class="learn-more w-min mb-1 scale-75"
+                    variant="outlined">
+                    {{ projectUrl ? 'View in Repo' : 'No Public Repo :(' }}
+                </v-btn>
+            </div>
         </div>
     </div>
 </template>

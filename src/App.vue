@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar class="w-full" elevation="5">
+    <v-app-bar class="w-fit" elevation="5">
       <v-app-bar-nav-icon @click.native="drawer = !drawer" class="lg:!hidden"></v-app-bar-nav-icon>
       <v-app-bar-title><span class="max-lg:hidden">Portfolio </span>Yannick Müller</v-app-bar-title>
       <div class="max-lg:hidden">
@@ -43,6 +43,8 @@
 
     <v-main>
       <div>
+        <welcome></welcome>
+        
         <div id="about-me" class="pt-10 w-full h-1"></div>
         <about-me></about-me>
         <div id="education" class="pt-10 w-full h-1"></div>
@@ -73,6 +75,7 @@ import Contact from './views/Contact.vue';
 import Experience from './views/Experience.vue';
 import AboutMe from './views/AboutMe.vue';
 import Education from './views/Education.vue';
+import Welcome from './views/Welcome.vue';
 
 export default {
   name: "App",
@@ -87,7 +90,8 @@ export default {
     Experience,
     AboutMe,
     Education,
-  },
+    Welcome
+},
   methods: {
     updateView(elementId: string) {
       if (!elementId) {
@@ -106,11 +110,19 @@ export default {
   },
   mounted() {
     this.updateView(window.location.hash.replace('#', ''));
+    this.$root.goto = (id: string, updateUrl: boolean) => {
+      if(updateUrl){
+        this.updateUrl(id);
+      } else{
+        this.updateView(id);
+      }
+    }
   }
 }
 
 </script>
 <style  lang="scss">
+
 #app {
   font-size: medium;
 }
