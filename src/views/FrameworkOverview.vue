@@ -72,13 +72,11 @@ export default {
 <style>
 #frameworks,
 #framework-slider {
-    position: relative;
     pointer-events: none;
 }
 
 #framework-slider{
     pointer-events: none;
-    overflow-x: visible;
     animation: carousel 20s linear infinite;
 }
 
@@ -88,26 +86,6 @@ export default {
 
 #framework-slider:hover {
     animation-play-state: paused;
-}
-
-#frameworks::before,
-#frameworks::after {
-    height: 100%;
-    content: "";
-    position: absolute;
-    z-index: 2;
-    background: linear-gradient(to right, #121212 0%, #12121200 100%);
-    width: min(150px, 5%);
-    top: 0;
-}
-
-#frameworks::after {
-    right: 0;
-    transform: rotateZ(180deg);
-}
-
-#frameworks::before {
-    left: 0;
 }
 
 @keyframes carousel {
