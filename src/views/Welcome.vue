@@ -1,8 +1,8 @@
 <template>
     <div class="h-[100vh] max-w-[80%] relative mx-auto flex flex-wrap flex-column align-center justify-center">
         <h1 class="text-5xl">Hey, I'm <span class="font-bold inline">Yannick Müller</span></h1>
-        <h2 class="pt-8 text-4xl ">I'm a <span id="placeholder"></span></h2>
-        <div class="absolute bottom-40 animate-bounce">
+        <h2 class="pt-8 text-4xl max-md:min-h-[10rem]">I'm a <span id="placeholder"></span></h2>
+        <div class="absolute bottom-40 max-md:bottom-32 animate-bounce">
             <v-btn icon="fas fa-arrow-down" @click="goto()">
             </v-btn>
         </div>
