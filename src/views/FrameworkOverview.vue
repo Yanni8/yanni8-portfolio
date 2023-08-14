@@ -70,6 +70,11 @@ export default {
 }
 </script>
 <style>
+
+#frameworks {
+    overflow-x: hidden;
+}
+
 #frameworks,
 #framework-slider {
     pointer-events: none;
