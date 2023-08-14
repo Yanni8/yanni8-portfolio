@@ -131,6 +131,8 @@ header {
 
 html {
   background: #0f172a;
+  width: 100vw;
+  overflow: hidden;
 }
 
 @mixin bgelements($count) {

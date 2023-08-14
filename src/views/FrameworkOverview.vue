@@ -78,7 +78,7 @@ export default {
 
 #framework-slider{
     pointer-events: none;
-    overflow-y: visible;
+    overflow-x: visible;
     animation: carousel 20s linear infinite;
 }
 

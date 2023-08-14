@@ -9,7 +9,6 @@
     </div>
 </template>
 <script lang="ts">
-import { networkInterfaces } from 'os';
 
 export default {
     name: "ExperienceSlider",
