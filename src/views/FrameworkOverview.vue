@@ -1,7 +1,7 @@
 <template>
     <div class="ma-8 h-fit">
         <h1 class="text-4xl ml-4 mb-5">My Technical Skills</h1>
-        <div class="-mx-8 h-fit pt-8 flex" id="frameworks">
+        <div class="-mx-8 min-h-[15rem] pt-8 flex" id="frameworks">
             <div class="h-fit flex" id="framework-slider">
                 <framework-card class="framework-card" v-for="framework in frameworks" :logo="framework.logo"
                 :title="framework.title" :project-url="framework.projectUrl"></framework-card>
@@ -87,6 +87,7 @@ export default {
 
 #framework-slider>.framework-card {
     pointer-events: auto;
+    z-index: 1000000000;
 }
 
 #framework-slider:hover {
