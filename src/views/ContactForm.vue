@@ -32,7 +32,7 @@ export default {
 
     methods:{
         sendMail(){
-            axios.post("https://contactapi.ynnk.dev", {
+            axios.post("/msg", {
                 email: this.email,
                 message: this.message
             }).then(() => {
