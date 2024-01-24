@@ -1,4 +1,4 @@
-export function onRequest(context) {
+export async function onRequest(context) {
     const { request } = context;
     const { searchParams } = new URL(request.url)
     const { DB } = context.env;
@@ -9,12 +9,12 @@ export function onRequest(context) {
         })
     }
 
-    const json = request.json()
+    const json = await request.json()
 
 
     console.log(json)
 
-    const { results } = DB.prepare(
+    const { results } = await DB.prepare(
         "INSERT INTO message (email, message) VALUES (?, ?)"
     )
         .bind(json["email"], json["comment"])
