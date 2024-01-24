@@ -11,7 +11,8 @@
             <div class="h-4"></div>
             <v-textarea v-model="message" label="Message" class="w-full"></v-textarea>
             <div class="h-4"></div>
-            <v-btn @click="sendMail()" class="w-full border hover:!bg-[#ffffff8c] hover:!text-black border-white bg-red-900" color="transparent">Send</v-btn>
+            <v-btn @click="sendMail()" class="w-full border hover:!bg-[#ffffff8c] hover:!text-black border-white bg-red-900"
+                color="transparent">Send</v-btn>
         </div>
     </div>
 </template>
@@ -23,23 +24,29 @@ import axios from 'axios';
 export default {
     name: "ContactForm",
 
-    data(){
+    data() {
         return {
             email: "",
             message: ""
         }
     },
 
-    methods:{
-        sendMail(){
+    methods: {
+        sendMail() {
             axios.post("/msg", {
                 email: this.email,
-                message: this.message
-            }).then(() => {
+                comment: this.message
+
+            }
+            ).then(() => {
                 this.$root.$emit("show-snackbar", "Message sent successfully");
             }).catch(() => {
                 this.$root.$emit("show-snackbar", "An error occurred while sending the message");
             })
+            
+            this.email = "";
+            this.message = "";
+
         }
     }
 }
