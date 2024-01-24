@@ -22,7 +22,7 @@ export default {
 @import '../typed.scss';
 
 #placeholder {
-    @include typed("Developer", "Linux Enthusiast", "Full Stack Engineur");
+    @include typed("Developer", "Linux Enthusiast", "Full Stack Engineer");
 
 }
 </style>

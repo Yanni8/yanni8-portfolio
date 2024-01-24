@@ -1,6 +1,6 @@
 <template>
-  <v-app>
-    <v-app-bar class="w-fit" elevation="5">
+  <v-app id="main">
+    <v-app-bar id="navbar" class="w-fit backdrop-blur-lg" elevation="5">
       <v-app-bar-nav-icon @click.native="drawer = !drawer" class="lg:!hidden"></v-app-bar-nav-icon>
       <v-app-bar-title><span class="max-lg:hidden">Portfolio </span>Yannick Müller</v-app-bar-title>
       <div class="max-lg:hidden">
@@ -14,15 +14,8 @@
         <v-btn variant="text" @click="updateUrl('experience')">
           Experience
         </v-btn>
-        <v-btn variant="text" @click="updateUrl('contact')">
-          Contact Details
-        </v-btn>
       </div>
     </v-app-bar>
-    <v-system-bar class="flex justify-center">
-      <p class="mr-2 uppercase text-red-600 font-bold">important</p>
-      <p>This website is still under development</p>
-    </v-system-bar>
     <v-navigation-drawer disable-resize-watcher v-model="drawer" location="top" width="100%">
       <v-list lines="one">
         <v-list-item @click="updateUrl('about-me')" title="About Me"></v-list-item>
@@ -39,7 +32,7 @@
     <v-main>
       <div>
         <welcome></welcome>
-        
+
         <div id="about-me" class="pt-10 w-full h-1"></div>
         <about-me></about-me>
         <div id="education" class="pt-10 w-full h-1"></div>
@@ -47,11 +40,11 @@
         <div id="experience" class="pt-10 w-full h-1"></div>
         <experience></experience>
         <framework-overivew></framework-overivew>
-        <div id="contact" class="pt-10 w-full h-1"></div>
-        <contact></contact>
+        <div id="conntact" class="pt-10 w-full h-1"></div>
+        <contact-form></contact-form>
       </div>
     </v-main>
-    <v-footer class="flex justify-between w-full opacity-75">
+    <v-footer class="flex justify-between w-full opacity-75 bg-[#0e10149f]">
       <div>
         &copy; {{ new Date().getFullYear() }}<span class="max-md:hidden"> - Yannick Müller</span>
       </div>
@@ -65,11 +58,11 @@
 </template>
 <script lang="ts">
 import FrameworkOverivew from './views/FrameworkOverview.vue';
-import Contact from './views/Contact.vue';
 import Experience from './views/Experience.vue';
 import AboutMe from './views/AboutMe.vue';
 import Education from './views/Education.vue';
 import Welcome from './views/Welcome.vue';
+import ContactForm from './views/ContactForm.vue';
 
 export default {
   name: "App",
@@ -80,12 +73,12 @@ export default {
   },
   components: {
     FrameworkOverivew,
-    Contact,
     Experience,
     AboutMe,
     Education,
-    Welcome
-},
+    Welcome,
+    ContactForm
+  },
   methods: {
     updateView(elementId: string) {
       if (!elementId) {
@@ -105,9 +98,9 @@ export default {
   mounted() {
     this.updateView(window.location.hash.replace('#', ''));
     this.$root.goto = (id: string, updateUrl: boolean) => {
-      if(updateUrl){
+      if (updateUrl) {
         this.updateUrl(id);
-      } else{
+      } else {
         this.updateView(id);
       }
     }
@@ -116,7 +109,6 @@ export default {
 
 </script>
 <style  lang="scss">
-
 #app {
   font-size: medium;
 }
@@ -135,61 +127,14 @@ html {
   overflow: hidden;
 }
 
-@mixin bgelements($count) {
-
-
-  $colors: #18395e,
-  #102f8a;
-  $shadow: ();
-
-  @for $i from 0 through $count {
-    $shadow: $shadow,
-    (-.5+(random()) * 3)+em (-.5+(random()) * 3)+em 10px lighten(nth($colors, random(length($colors))), 20%);
-    ;
-  }
-
-  text-shadow: $shadow;
-}
-
-
-@mixin bgelements-md($count) {
-
-
-  $colors: #18395e,
-  #102f8a;
-
-  $shadow: ();
-
-  @for $i from 0 through $count {
-    $shadow: $shadow,
-    (-.3+(random()) * 2)+em (-.5+(random()) * 2)+em 10px lighten(nth($colors, random(length($colors))), 20%);
-    ;
-  }
-
-  text-shadow: $shadow;
-}
-
-@mixin bgelements-sm($count) {
-
-
-  $colors: #18395e,
-  #0d36b3;
-
-  $shadow: ();
-
-  @for $i from 0 through $count {
-    $shadow: $shadow,
-    (-.5+(random()) * 3)+em (-.5+(random()) * 3)+em 10px lighten(nth($colors, random(length($colors))), 20%);
-    ;
-  }
-
-  text-shadow: $shadow;
-}
-
 html {
   font: 5vmin/1.3 Serif;
   overflow: hidden;
-  background: #10192f;
+}
+
+main {
+  background: rgb(5, 4, 31);
+  background: linear-gradient(90deg, rgba(5, 4, 31, 1) 0%, rgba(3, 3, 18, 1) 29%, rgba(3, 3, 56, 1) 100%);
 }
 
 head {
@@ -198,41 +143,8 @@ head {
   color: transparent;
 }
 
-head::after {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 3em;
-  height: 3em;
-  content: '.';
-  mix-blend-mode: screen;
-  animation: 100s -50s animate-bg infinite ease-in-out alternate;
-}
-
-head::after {
-  @include bgelements(30);
-}
-
-@media screen and (max-width: 768px) {
-  head::after {
-    @include bgelements-md(30);
-
-  }
-}
-
-@media screen and (max-width: 640px) {
-  head::after {
-    @include bgelements-sm(30);
-  }
-}
-
-@keyframes animate-bg {
-  from {
-    transform: rotate(0deg) scale(15) translateX(-20px);
-  }
-
-  to {
-    transform: rotate(360deg) scale(15) translateX(20px);
-  }
+#navbar {
+  background-color: #0e10149f;
+  color: white;
 }
 </style>
