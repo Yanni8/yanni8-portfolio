@@ -1,7 +1,7 @@
-export function onRequest(context, env) {
+export function onRequest(context) {
     const { request } = context;
     const { searchParams } = new URL(request.url)
-    const { DB } = env;
+    const { DB } = context.env;
 
     if (request.method === "GET") {
         return new Response(null, {
